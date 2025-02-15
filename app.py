@@ -1,4 +1,25 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)  # Permet les requêtes cross-origin
+
+# Endpoint pour analyser l'URL YouTube
+@app.route("/analyze", methods=["POST"])  # Méthode POST
+def analyze():
+    data = request.get_json()  # Récupère les données JSON envoyées
+    if not data or "youtube_url" not in data:
+        return jsonify({"error": "Missing youtube_url"}), 400  # Si l'URL YouTube est manquante
+
+    youtube_url = data["youtube_url"]
+    # Ajouter la logique d'analyse ici (par exemple, vérifier si la vidéo existe sur TikTok)
+    result = {"message": f"Analyzing {youtube_url}"}
+
+    return jsonify(result)  # Retourne un résultat sous forme de JSON
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
 from pytube import YouTube
 import cv2
 import librosa

@@ -2,6 +2,7 @@ Flask
 pytube
 opencv-python
 librosa
-audfprint
 requests
 gunicorn
+numpy
+scipy

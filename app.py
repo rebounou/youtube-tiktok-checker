@@ -2,6 +2,9 @@ from flask import Flask, request, jsonify
 from pytube import YouTube
 import cv2
 import librosa
+import os
+os.system("git clone https://github.com/dpwe/audfprint.git && cd audfprint && python setup.py install")
+import audfprint
 import audfprint
 import requests
 import os

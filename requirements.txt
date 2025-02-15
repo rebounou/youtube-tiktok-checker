@@ -1,0 +1,7 @@
+Flask
+pytube
+opencv-python
+librosa
+audfprint
+requests
+gunicorn
